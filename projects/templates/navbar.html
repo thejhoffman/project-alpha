@@ -1,0 +1,27 @@
+<header>
+  <nav>
+    <h3>Welcome {{ user.username | default:"Guest" }} !</h3>
+    <ul>
+      {% if user.is_authenticated %}
+        <li>
+          PLACEHOLDER <!-- TODO: Update once task template is ready-->
+          {% comment %} <a href="{% url 'show_my_tasks' %}">My tasks</a> {% endcomment %}
+        </li>
+        <li>
+          <a href="{% url 'list_projects' %}">My projects</a>
+        </li>
+        <li>
+          <a href="{% url 'logout' %}">Logout</a>
+        </li>
+      {% else %}
+        <li>
+          <a href="{% url 'login' %}">Login</a>
+        </li>
+        <li>
+          PLACEHOLDER <!-- TODO: Update once task signup is ready-->
+          {% comment %} <a href="{% url 'signup' %}">Sign Up</a> {% endcomment %}
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
