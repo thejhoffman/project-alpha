@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block main %}
+  <div>
+    <h1>My Projects</h1>
+    {% if not project_list %}
+      <p>You are not assigned to any projects</p>
+    {% else %}
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Number of tasks</th>
+        </thead>
+        <tbody>
+          {% for project in project_list %}
+            <tr>
+              <td>{{ project.name }}</td>
+              <!-- TODO: Update with number of tasks -->
+              <td>PLACEHOLDER</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+  </div>
+{% endblock main %}
