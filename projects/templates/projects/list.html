@@ -5,7 +5,7 @@
 {% block main %}
   <div>
     <h1>My Projects</h1>
-    {% if not project_list %}
+    {% if not project_list.exists %}
       <p>You are not assigned to any projects</p>
     {% else %}
       <table>
@@ -16,9 +16,10 @@
         <tbody>
           {% for project in project_list %}
             <tr>
-              <td>{{ project.name }}</td>
-              <!-- TODO: Update with number of tasks -->
-              <td>PLACEHOLDER</td>
+              <td>
+                <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
+              </td>
+              <td>{{ project.tasks.all|length }}</td>
             </tr>
           {% endfor %}
         </tbody>
