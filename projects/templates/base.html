@@ -10,7 +10,7 @@
     </title>
   </head>
   <header>
-    {% include "navbar.html" %}
+    {% include 'navbar.html' %}
   </header>
   <body>
     <main>
@@ -18,5 +18,13 @@
       {% endblock main %}
     </main>
   </body>
-  <pre>{% debug %}</pre>
+  <details>
+    <summary>
+      Debug Info
+    </summary>
+    <p>
+      <pre>{% debug %}</pre>
+    </p>
+  </details>
+</div>
 </html>
