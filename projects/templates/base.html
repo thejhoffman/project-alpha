@@ -9,15 +9,16 @@
       {% endblock title %}
     </title>
   </head>
-  <header>
-    {% include 'navbar.html' %}
-  </header>
   <body>
+    <header>
+      {% include 'navbar.html' %}
+    </header>
     <main>
       {% block main %}
       {% endblock main %}
     </main>
   </body>
+  <!--
   <details>
     <summary>
       Debug Info
@@ -26,5 +27,5 @@
       <pre>{% debug %}</pre>
     </p>
   </details>
-</div>
+  -->
 </html>
