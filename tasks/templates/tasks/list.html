@@ -20,7 +20,15 @@
               <td>{{ task.start_date|date:"m-d-Y" }}</td>
               <td>{{ task.due_date|date:"m-d-Y" }}</td>
               <td>
-                {% if task.is_completed %}Done{% endif %}
+                {% if task.is_completed %}
+                  Done
+                {% else %}
+                  <form action="{% url 'complete_task' task.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="is_completed" value="True">
+                    <button>Complete</button>
+                  </form>
+                {% endif %}
               </td>
             </tr>
           {% endfor %}
