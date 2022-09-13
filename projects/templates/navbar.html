@@ -4,8 +4,7 @@
     <ul>
       {% if user.is_authenticated %}
         <li>
-          PLACEHOLDER <!-- TODO: Update once task template is ready-->
-          {% comment %} <a href="{% url 'show_my_tasks' %}">My tasks</a> {% endcomment %}
+          <a href="{% url 'show_my_tasks' %}">My tasks</a>
         </li>
         <li>
           <a href="{% url 'list_projects' %}">My projects</a>
