@@ -3,12 +3,12 @@
   Signup
 {% endblock title %}
 {% block main %}
-  <div>
+  <div class="main">
     <h1>Signup</h1>
-    <form method="post">
+    <form class="sign-up" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button>Signup</button>
+      <button class="button">Signup</button>
     </form>
   </div>
 {% endblock main %}

@@ -3,7 +3,7 @@
   My Tasks
 {% endblock title %}
 {% block main %}
-  <div>
+  <div class="main">
     <h1>My Tasks</h1>
     {% if task_list.exists %}
       <table>
@@ -26,7 +26,7 @@
                   <form action="{% url 'complete_task' task.id %}" method="post">
                     {% csrf_token %}
                     <input type="hidden" name="is_completed" value="True">
-                    <button>Complete</button>
+                    <button class="task">Complete</button>
                   </form>
                 {% endif %}
               </td>

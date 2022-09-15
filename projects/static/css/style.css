@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html,
+button,
+select,
+textarea,
+input {
+  background-color: #131316;
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 16px;
+}
+
+header nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  justify-items: left;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #208ACC;
+}
+
+button.task {
+  border-radius: 25px;
+  padding: .5em;
+}
+
+button.button {
+  background-color: #E012AD;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: white;
+  padding: 1em 1.5em;
+  text-transform: uppercase;
+  justify-self: center;
+  margin: 1em;
+}
+
+button.button:hover {
+  background-color: white;
+  border-color: #E012AD;
+  color: #E012AD;
+}
+
+button.button:active {
+  background-color: lightblue;
+}
+
+input,
+textarea,
+select {
+  border: 1px solid #E012AD;
+  border-radius: 4px;
+  padding: 1em 1.5em;
+  width: 400px;
+  justify-self: center;
+}
+
+form {
+  margin: auto;
+}
+
+table {
+  margin: auto;
+  padding: 1em;
+  border-collapse: separate;
+  border-spacing: 1em;
+}
+
+th {
+  border-radius: 25px;
+  background: #33343B;
+  padding: 1em;
+  font-size: 24px;
+}
+
+td {
+  border-radius: 25px;
+  background: #33343B;
+  padding: 1em;
+  text-align: center;
+}
+
+textarea {
+  resize: none;
+}
+
+.sidebar {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #1E1E1E;
+}
+
+.sidebar-head {
+  background-color: #2a2a2c;
+  font-size: 24px;
+  padding: 1em;
+  border-bottom: 2px solid #bbb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.sidebar li {
+  padding: 8px;
+  font-size: 20px;
+  display: block;
+}
+
+.body-text {
+  margin-left: 200px;
+  font-size: 18px;
+}
+
+div.main {
+  margin: auto;
+}
+
+div.main>h1 {
+  text-align: center;
+}
+
+div.main>p {
+  text-align: center;
+}
+
+div.main>h2 {
+  text-align: center;
+}
+
+form.sign-up>ul {
+  display: grid;
+  list-style: none;
+  color: rgb(185, 46, 227);
+  font-size: 12px;
+  justify-self: center;
+  margin: 0;
+}
+
+ul.errorlist>li {
+  color: white;
+  border-radius: 25px;
+  width: fit-content;
+  background: rgb(117, 0, 0);
+  padding: 1em 2em;
+  margin: 1em;
+  font-weight: bold;
+}
+
+span.helptext {
+  color: rgb(185, 46, 227);
+  white-space: pre;
+  padding: 1em 5em;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  width: 500px;
+  float: left;
+  padding: 1em;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+form>p {
+  display: grid;
+  margin: 0;
+  justify-content: center;
+}

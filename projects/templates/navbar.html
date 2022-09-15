@@ -1,5 +1,9 @@
-<nav>
-  <h3>Welcome {{ user.username | default:"Guest" }} !</h3>
+<nav class="sidebar">
+  <div class="sidebar-head">
+    Welcome
+    <br>
+    {{ user.username | default:"Guest" }}
+  </div>
   <ul>
     {% if user.is_authenticated %}
       <li>

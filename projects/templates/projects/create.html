@@ -3,12 +3,12 @@
   Create a new project
 {% endblock title %}
 {% block main %}
-  <div>
+  <div class="main">
     <h1>Create a new project</h1>
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button>Create</button>
+      <button class="button">Create</button>
     </form>
   </div>
 {% endblock main %}
