@@ -25,7 +25,7 @@
                                 {% else %}
                                     <form action="{% url 'complete_task' task.id %}" method="post">
                                         {% csrf_token %}
-                                        <input type="hidden" name="is_completed" value="True">
+                                        <input type="hidden" name="is_completed" value="True" />
                                         <button>Complete</button>
                                     </form>
                                 {% endif %}
