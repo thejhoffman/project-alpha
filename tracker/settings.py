@@ -35,6 +35,7 @@ LOGOUT_REDIRECT_URL = "login"
 # Application definition
 
 INSTALLED_APPS = [
+    "widget_tweaks",
     "markdownify.apps.MarkdownifyConfig",
     "accounts.apps.AccountsConfig",
     "projects.apps.ProjectsConfig",

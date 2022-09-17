@@ -1,39 +1,46 @@
 {% extends 'base.html' %}
-{% load markdownify %}
 {% block title %}
   {{ project.name }}
 {% endblock title %}
 {% block main %}
-  <div class="main">
-    <h1>{{ project.name }}</h1>
-    {{ project.description|markdownify }}
-    <h2>Tasks</h2>
-    <p>
+  <section class="hidden">
+    <h1 class="stagger hidden" style="--order:1;">{{ project.name }}</h1>
+    <p class="stagger hidden" style="--order:2;">{{ project.description }}</p>
+    <h2 class="stagger hidden" style="--order:3;">Tasks</h2>
+    <p class="stagger hidden" style="--order:4;">
       <a href="{% url 'create_task' %}">Create a new task</a>
     </p>
-    {% if project.tasks.exists %}
-      <table>
-        <thead>
-          <th>Name</th>
-          <th>Assignee</th>
-          <th>Start date</th>
-          <th>Due date</th>
-          <th>Is completed</th>
+  </section>
+  {% if project.tasks.exists %}
+    <section class="hidden">
+      <table class="hidden">
+        <thead class="hidden">
+          <th class="hidden">Name</th>
+          <th class="hidden">Assignee</th>
+          <th class="hidden">Start date</th>
+          <th class="hidden">Due date</th>
+          <th class="hidden">Is completed</th>
         </thead>
-        <tbody>
+        <tbody class="hidden">
           {% for task in project.tasks.all %}
-            <tr>
-              <td>{{ task.name }}</td>
-              <td>{{ task.assignee }}</td>
-              <td>{{ task.start_date|date:"m-d-Y" }}</td>
-              <td>{{ task.due_date|date:"m-d-Y" }}</td>
-              <td>{{ task.is_completed|yesno }}</td>
+            <tr class="hidden">
+              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.name }}</td>
+              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.assignee }}</td>
+              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.start_date|date:"m-d-Y" }}</td>
+              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.due_date|date:"m-d-Y" }}</td>
+              <td class="stagger hidden"
+                  style="text-align: center;
+                         --order:{{ forloop.counter }};">
+                {{ task.is_completed|yesno }}
+              </td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
-    {% else %}
-      <p>This project has no tasks</p>
-    {% endif %}
-  </div>
+    </section>
+  {% else %}
+    <section class="hidden">
+      <p class="hidden">This project has no tasks</p>
+    </section>
+  {% endif %}
 {% endblock main %}

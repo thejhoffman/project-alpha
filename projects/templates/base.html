@@ -10,24 +10,16 @@
       {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script defer src="{% static 'scripts/animate.js' %}"></script>
   </head>
   <body>
     <header>
       {% include 'navbar.html' %}
     </header>
-    <main class="body-text">
+    <main>
       {% block main %}
       {% endblock main %}
+      {% comment %} {% include 'debug_info.html' %} {% endcomment %}
     </main>
   </body>
-  <!--
-  <details>
-    <summary>
-      Debug Info
-    </summary>
-    <p>
-      <pre>{% debug %}</pre>
-    </p>
-  </details>
-  -->
 </html>

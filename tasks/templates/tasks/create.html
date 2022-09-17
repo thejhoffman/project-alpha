@@ -3,12 +3,12 @@
   Create a new task
 {% endblock title %}
 {% block main %}
-  <div class="main">
-    <h1>Create a new task</h1>
-    <form method="post">
+  <section class="hidden">
+    <h1 class="hidden">Create a new task</h1>
+    <form class="hidden" method="post">
       {% csrf_token %}
       {{ form.as_p }}
-      <button>Create</button>
+      <button class="button">Create</button>
     </form>
-  </div>
+  </section>
 {% endblock main %}
