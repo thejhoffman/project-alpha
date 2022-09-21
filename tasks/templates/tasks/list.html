@@ -10,24 +10,22 @@
     <section class="hidden">
       <table class="hidden">
         <thead class="hidden">
-          <th class="hidden">Name</th>
-          <th class="hidden">Start date</th>
-          <th class="hidden">End date</th>
-          <th class="hidden">Is completed</th>
+          <tr id="two-col-table">
+            <th class="hidden">Name</th>
+            <th class="hidden">Mark complete</th>
+          </tr>
         </thead>
         <tbody class="hidden">
           {% for task in task_list %}
-            <tr class="hidden">
+            <tr onClick='toggleRow(this)' id="two-col-table" class="hidden">
               <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.name }}</td>
-              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.start_date|date:"m-d-Y" }}</td>
-              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ task.due_date|date:"m-d-Y" }}</td>
-              <td class="stagger hidden"
-                  style="text-align: center;
-                         --order:{{ forloop.counter }};">
+              <td class="stagger hidden td-center"
+                  style="--order:{{ forloop.counter }};">
                 {% if task.is_completed %}
                   Done
                 {% else %}
-                  <form onsubmit="setStorage()"
+                  <form class="task-form"
+                        onsubmit="setStorage()"
                         style="border: none;
                                padding: 0;"
                         action="{% url 'complete_task' task.id %}"
@@ -42,6 +40,19 @@
                   }
                   </script>
                 {% endif %}
+              </td>
+              <td class="expanded-row-content hide-row">
+                <div class="date-grid">
+                  <div class="start-date">Start date:</div>
+                  <div class="start-date date-right ">{{ task.start_date|date:"F d, Y" }}</div>
+                  <div class="due-date">Due date:</div>
+                  <div class="due-date date-right ">{{ task.due_date|date:"F d, Y" }}</div>
+                </div>
+                <br/>
+                <strong>Description</strong>
+                <p class="task-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, corrupti? Rerum laboriosam cumque perspiciatis excepturi vel enim a corrupti et dolorem quo tempora aliquid ea quasi, numquam, omnis quos quaerat?
+                </p>
               </td>
             </tr>
           {% endfor %}

@@ -17,20 +17,19 @@
     <section class="hidden">
       <table class="hidden">
         <thead class="hidden">
-          <th class="hidden">Name</th>
-          <th class="hidden">Number of tasks</th>
+          <tr id="two-col-table">
+            <th class="hidden">Name</th>
+            <th class="hidden">Number of tasks</th>
+          </tr>
         </thead>
         <tbody class="hidden">
           {% for project in project_list %}
-            <tr class="hidden">
-              <td class="stagger hidden" style="--order:{{ forloop.counter }};">
-                <a href="{% url 'show_project' project.id %}">{{ project.name }}</a>
-              </td>
-              <td class="stagger hidden"
-                  style="text-align: center;
-                         --order:{{ forloop.counter }};">
-                {{ project.tasks.all|length }}
-              </td>
+            <tr onclick="location.href='{% url 'show_project' project.id %}';"
+                id="two-col-table"
+                class="hidden projects-table">
+              <td class="stagger hidden" style="--order:{{ forloop.counter }};">{{ project.name }}</td>
+              <td class="stagger hidden td-center"
+                  style="--order:{{ forloop.counter }};">{{ project.tasks.all|length }}</td>
             </tr>
           {% endfor %}
         </tbody>
